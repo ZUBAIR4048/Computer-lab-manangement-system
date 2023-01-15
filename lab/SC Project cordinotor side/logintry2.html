@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>login page</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <script>
+        var username=document.forms['form']['user'].value;
+        var password=document.forms['form']['pass'].value;
+        var user_error=document.getElementById('user_err');
+        var pass_error=document.getElementById('pass_err');
+        username.addEventListener('textinput',username_verify);
+        password.addEventListener('textinput',pass_verify);
+        function validate(){
+            if(username.length<9){
+                username.style.border="1px solid red";
+                username.error.style.display="block";
+                username.focus(); 
+                return false;
+            }
+            if(password.length<6){
+                username.style.border="1px solid red";
+                username.error.style.display="block";
+                username.focus();
+                return false;
+            }
+        }
+        function username_verify(){
+            if(username.length>7){
+                username.style.border="1px green";
+                user_error.error.style.display="none";
+                return true;
+            }
+        }
+        function pass_verify(){
+            if(password.length>5){
+                username.style.border="1px green";
+                username.error.style.display="none";
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <style>
+        body{
+            background: url('background1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style> 
+     <table width="100%" cellspacing="0%" align="center" movement="fixed">
+        <tr>
+            <td><img src="site-icon.png" height="150px" width="150px">
+            </td>
+             <td>
+                <table color="#FF0000">
+                    <section>
+                    <div class="page-header">
+                        <div class="container" text-align="center" font-size="50%">
+                            <h1 style="margin-left: 150px;">Department of Computer Sciences</h1>
+                            <p style="margin-left: 200px;">Quaid-i-Azam University, Islamabad</p>
+                        </div>
+                    </div>
+                </section>
+                 </table>
+             </td>
+        </tr>
+     </table>	
+<div class="box" align="center">
+<div>
+    <h1>
+        LAB MANAGEMENT SYSTEM
+    </h1>
+    <h2>
+        LOGIN 
+    </h2>
+    </div>
+    <div>
+    <form id="form" method="post" onclick="return validate()" >
+        <label for="user"> Username:</label><br>
+        <input type="text" placeholder="LOGIN:" id="user" name="user" onchange="validateUser();"><br>
+        <label id="errorUser"></label>  
+    <br>
+        <label for="pass"> Password:</label> <br>   
+         <input type="password" required placeholder="PASSWORD:" id="pass" name="pass"><br>
+   <br>
+        <button value="submit" id="sub" ><a href="dasboard.html" onclick="validateUser()"></a></button>
+</form>
+    </div>
+<br><br>
+    <div class="other">
+        <br><br>
+        <button><a href="#" >Admministrator </a></button><br>
+        <button><a href="#" >other user </a></button>
+    </div>
+</div>
+<script>
+    function validateUser(){
+        let namee;
+        namee=document.getElementById("user").value;
+        for(i=0; i<namee.length; i++){
+            if((namee[i] >= 'a' && namee[i] <= 'z') || (namee[i] >= 'A' && namee[i] <= 'Z')) {
+                document.getElementById("errorUser").innerHTML="Invalid user.";
+                document.getElementById("errorUser").style.color="red";
+                document.getElementById("sub").disabled=true;
+            }
+            else{
+                document.getElementById("errorUser").innerHTML="";
+                document.getElementById("errorUser").style.color="";
+                document.getElementById("sub").disabled=false;
+            }
+
+        }
+        if(namee.length!=11){
+            document.getElementById("errorUser").innerHTML="Invalid user.";
+            document.getElementById("errorUser").style.color="red";
+            document.getElementById("sub").disabled=true;
+        }
+        else{
+            document.getElementById("errorUser").innerHTML="";
+            document.getElementById("errorUser").style.color="";
+            document.getElementById("sub").disabled=false
+        }
+    }
+</script>
+</body>
+</html>
+ 

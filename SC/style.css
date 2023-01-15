@@ -1,0 +1,203 @@
+
+nav{
+    background: #0082e6;
+    height: 100px;
+    width: 100%;
+}
+label.logo{
+   padding:  100px;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px ;
+    text-transform: uppercase;
+}
+.box #user-err{
+    margin-top: 0px;
+    font-size: 18px;
+    color:brown;
+    display: none;
+}
+.box #pass-err{
+    margin-top: 0px;
+    font-size: 18px;
+    color:brown;
+    display: none; 
+}
+
+#sub{
+    box-sizing: 100px;
+    color: black;
+}
+.navbar{
+    font-size: 20px;
+    text-transform: capitalize;
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+.container{
+    font-size: 100%;
+    padding-left: 15px;
+}
+.login{
+    size: 20%;
+}
+.label{
+    padding: 20px 130px;
+    font-size: 35px;
+}
+
+.forming input{
+    padding: 0px 5px;
+}
+/*#rox{
+ justify-content: center;
+ position: relative;
+ align-items: center;
+ border-radius: 5px;
+}*/
+.rox{
+    padding-top: 0px;
+}
+.rox .forming{
+    justify-content: center;
+    position: relative;
+  }
+.Rox .intro{
+    justify-content: center;
+    justify-items: center;
+    width: 100%;
+    border: 0%;
+    color: "#jn3455";
+}
+.Rox .menu-btn{
+    justify-items: center;
+    align-items: center;
+    display: flex;
+    max-width: fit-content;
+}
+input{
+    width: 150px;
+    display: inline-block;
+}
+label{
+    width: 240px;
+    display: inline-block;
+}
+textarea{
+    display: inline-block;
+    margin-left: 650px;
+}
+.footer-content{
+    align-items: center; 
+    flex-direction: column;
+    display:flex;
+    justify-content: center;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 1.8rem;
+    color:white;
+    display: flex;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #333;
+    color:white;
+    padding:0em;
+    width:100vw;
+    padding-top: 0px;
+    font-family: "Open Sans";
+}
+.footer-content p{
+    max-width: 500px;
+    margin-bottom:3px;
+    line-height: 2px;
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+.socials{
+    list-style: none;   
+    display: flex;
+    padding-bottom: 0px;
+    align-items: center;
+    justify-content: center;
+}
+.socials a{
+    text-decoration: none;
+    padding: 50px;
+    padding-bottom: 0px;
+}
+.socials a:hover i{
+    color: rgb(63, 223, 135);
+}
+.footer-bottom{
+    text-align: center;
+}
+.footer-bottom h3{
+    font-size: 20px;
+    text-transform: capitalize;
+    text-align: center;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    text-align: center;
+}
+.other{
+    height: 100%;
+    width:50%;
+    display:flex;
+justify-content: center;
+margin-left: 250px;
+}
+a:visited {
+    color: rgb(223, 166, 67);
+  }
+  a:hover {
+    color: rgb(218, 12, 12);
+  }
+  a:active {
+    color: yellow;
+  }
+#btn1{
+    color: rgb(218, 12, 12);
+    align-self: hover;
+    box-sizing: content-box;
+}
+.forming input{
+    height: 450px;
+    width: 350px;
+    font-size: 120px;
+    color: rgb(73, 29, 218);
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: #1A237E;
+    border-radius:3px;
+    border: 1px solid #4949AB;
+}
+.naming{
+    align-content: left;
+    margin-left: 400px;
+}
+
+  

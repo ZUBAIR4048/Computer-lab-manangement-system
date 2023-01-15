@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SOFTWERE INSTALLATION REQUEST</title>
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>  
+    <style>
+        body{
+            background: url('background1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style> 
+    <table width="100%" cellspacing="0%" align="center" movement="fixed">
+        <tr>
+            <td><img src="site-icon.png" height="150px" width="150px">
+             </td>
+             <td>
+                <table bgcolor="#FF0000" >
+                    <section>
+                    <div class="page-header">
+                        <div class="container" text-align="center" font-size="50%">
+                            <h1>Department of Computer Sciences</h1>
+                            <p>Quaid-i-Azam University, Islamabad</p>
+                        </div>
+                    </div>
+                </section>
+                 </table>
+             </td>
+        </tr>
+     </table>
+     <center>
+<div id="rox">
+<div cellspacing="0%">
+    <h1>
+        SOFTWERE INSTALLATION REQUEST FORM
+    </h1>
+    
+    </div>
+    <div class="form1" style="margin: auto;">
+    <table class="forming">   
+    <form action="backend.php"></form>
+    <form align="centre">
+        <label for="name">Student name:</label>
+        <input type="text" id="name"  onchange="validate()" required><br>
+        <br>
+        <label for="reg"> Reg no:</label>
+        <input type="text" id="regno" name="regno"  onchange="validatereg()" required><br><br>
+
+        <p>Choose your program:</p>
+
+        <input type="radio" id="html" name="bs" value="BS" checked>
+        <label for="bs">BS</label>
+        <input type="radio" id="html" name="bs" value="MS">
+        <label for="ms">MS</label>
+        <input type="radio" id="html" name="bs" value="PHD">
+        <label for="phd">PHD</label><br><br>
+
+
+        <label for="smester"> Semester no:</label>
+        <input type="text" id="Smester" name="Smester" onchange="validatesemester()" required><br><br>
+
+        <label for="sofwerename"> Softwere Name:</label>
+        <input type="text" id="softwerename" name="softwerename"  required><br><br>
+
+        <label for="version"> version:</label>
+        <input type="text" id="version" name="version" required><br><br>
+
+        <label for="User id"> User ID:</label>
+        <input type="text" id="User Id" name="User Id" required><br><br>
+        <label for="Lab id"> Lab ID:</label>
+        <input type="" id="Lab id" name="Lab id"><br><br>
+        <label for="description"> Description:</label>
+        <input type= textarea id="w3review" name="w3review" rows="4" cols="50"><br><br>
+        <input type="submit" value="Submit" id="btn1">
+      </form>   
+    </table>
+</div>
+</center>  
+<table bgcolor="#FF78646" border="0">
+    <footer>
+        <div id="footer-wrap">
+        <div id="button-collection">
+          <br>
+          <button class="footer-btn"><a target="_blank" href="contact_us/contact.html">Contact Us</a></button><br><br>
+          <button class="footer-btn"><a href="#">Privacy Policy</a></button><br><br>
+          <button class="footer-btn"><a href="#">Terms and Conditions</a></button><br>
+        </div>     
+        <div>
+          <h3> Computer science department <br> Quaid e Azam university, Islamabad, Pakistan</h3>
+          <h3>068-570234</h3>
+        </div>
+        </div>
+    </footer>
+</table>
+<script type="text/javascript">
+function doesContainNumber(name){
+    for(i = 0; i<name.length; i++){
+        if(!(( name[i] >= 'a' && name[i] <= 'z') || (name[i] >= 'A' && name[i] <= 'Z'))){
+            return false;
+        }
+        
+    }
+
+    return true;
+}
+function validate(){
+        let name = document.getElementById("name").value;
+        
+        let email = document.getElementById("email").value;
+
+        if(name.length == 0 || !doesContainNumber(name)){
+            let errorName = document.getElementById("errorName");
+            errorName.innerHTML = "Please enter a valid name";
+            errorName.style.color = "red";
+        }
+    }
+</script>
+</body>
+</html>
+ 
