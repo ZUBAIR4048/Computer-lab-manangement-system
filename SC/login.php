@@ -1,4 +1,30 @@
-
+<?php
+   include("config.php");
+   session_start();
+   
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
+  
+      
+      $myusername = mysqli_real_escape_string($db,$_POST['username']);
+      $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
+      
+      $sql = "SELECT id FROM login WHERE username = '$user' and passcode = '$pass'";
+      $result = mysqli_query($db,$sql);
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      $active = $row['active'];
+      
+      $count = mysqli_num_rows($result);
+		
+      if($count == 1) {
+         session_register("myusername");
+         $_SESSION['login_user'] = $myusername;
+         
+         header("location: welcome.php");
+      }else {
+         $error = "Your Login Name or Password is invalid";
+      }
+   }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +73,7 @@
         LOGIN 
     </h2>
     </div>
-    <form method="post"  id="form">
+    <form action="log.php"  id="form" method="post">
     <div class="login" >
         <label for="user"> Username:</label>
         <input type="text" placeholder="LOGIN:" id="user" name="user" onchange="validateUser();"  required 

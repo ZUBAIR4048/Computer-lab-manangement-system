@@ -22,6 +22,9 @@ table, th, td {
   padding: 10px;
   height: 180px;
 }
+.tab{
+
+}
 .row:after {
   content: "";
   display: table;
@@ -75,24 +78,53 @@ form.example::after {
 
 <h2 style="text-align: center;">Installation Requests</h2>
 
-<table id="table" style="width:100%">
-  <tr>
-    <th>Request Id</th>
-    <th>lab id</th>
-    <th>Computer id</th>
-    <th>Softwere Name</th>
-    <th>Softwere Version</th>
-    <th>Reason</th>
-    
-    <th>Status</th>
-    <th>Response</th>
-    
+<h1>Notifications</h1>
+    <table id="table" style="width:100%">>
+      <tr>
+      <th>Request id</th>
+      <th>LABID</th> 
+      <th>Softwer Name</th>
+      <th>Version</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Responce</th>
+        
+      </tr>
+      <?php
+        require_once 'C:\wamp\www\lab\classses.php';
+        $requestFacade = new RequestFacade();
+        $requests = $requestFacade->getAllRequest();
+        foreach ($requests as $request) {
+          echo '<tr>';
+          echo '<td>' . $request->getRequestID() . '</td>';
+          
+          echo '<td>' . $request->getlabID()   .'</td>';
+
+          echo '<td>' . $request->getSname() . '</td>';
+          echo '<td>' . $request->getversion() . '</td>';
+          echo '<td>' . $request->getSubject() . '</td>';
+
+          ?>
+
+    <td><input type="radio" name="r" value="accept" >accept<br><input type="radio" name="r" value="reject" >Reject</td>
+    <td><button style color="white"> <a href="https://mail.google.com/mail/u/0/#inbox/FMfcgxvwzcMvCVqtTprDSvtNVBhnMBzq        ">Reply</a></button></td>  
   </tr>
+      
 
-
-
+          
+      
   <?php
+      
+      
+        }
+        ?> 
+    </table>
+<?php
 
+
+
+
+/*
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -113,15 +145,17 @@ $result = $conn->query($sql);
   while($row = $result->fetch_assoc()) {
     ?>
     <tr> 
+    
     <td><?php echo $row["requestId"] ?></td>
-    <td>200</td>
+    <td><?php echo $row["labid"] ?></td>
     <td>c42202</td>
     <td><?php echo $row["sname"] ?></td>
-    
     <td><?php echo $row["version"] ?></td>
-  
-  
-    <td> Asked by mam onziza</td>
+    <td><?php echo $row["subject"] ?></td>
+
+    <?php 
+?>
+    
     <td><input type="radio" name="r" value="accept" >accept<br><input type="radio" name="r" value="reject" >Reject</td>
     <td><button style color="white"> <a href="https://mail.google.com/mail/u/0/#inbox/FMfcgxvwzcMvCVqtTprDSvtNVBhnMBzq        ">Reply</a></button></td>  
   </tr>
@@ -174,8 +208,9 @@ $conn->close();
     <td> require for Assignments</td>
     <td><input type="radio" name="r" value="accept" >accept<br><input type="radio" name="r" value="reject" >Reject</td>
     <td><button> <a href="https://mail.google.com/mail/u/0/#inbox/FMfcgxvwzcMvCVqtTprDSvtNVBhnMBzq        ">Reply</a></button></td>
-    
-  </tr> -->
+   */
+  ?> 
+  </tr>
 </table>
 <br><br><br><br>
 <br><br><br><br>
